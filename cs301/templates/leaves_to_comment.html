@@ -1,0 +1,12 @@
+<table>
+
+    {% for key, value in l.items() %}
+        <tr>
+         {% for key1, value1 in value.items() %}
+            <th>{{ key1}}</th>
+            <td>{{value1}}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    <p>  <a href="/profile"> To view profile </a></p>
+</table>

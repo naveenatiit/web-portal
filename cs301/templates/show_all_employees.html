@@ -1,0 +1,19 @@
+<table>
+
+    {% for key, value in d.items() %}
+        <tr>
+         {% for key1, value1 in value.items() %}
+            <th>{{ key1}}</th>
+            <td>{{value1}}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    <p>  <a href="http://127.0.0.1:5000/"> To move to welcome page </a></p>
+
+</table>
+<form action = "http://127.0.0.1:5000/guest_profile" method = "post">
+            <p> Enter the Employee Id: </p>
+            <p> <input type = "text" name="fid"/> </p>
+            
+            <p> <input type = "submit" value = "submit" /> </p>
+        </form>

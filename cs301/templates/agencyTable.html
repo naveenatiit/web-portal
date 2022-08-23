@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+   <body>
+      <h2 style = "text-align: center;">Contact Form</h2>
+		
+      {% for message in form.name.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+      
+      {% for message in form.manpower.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+
+      {% for message in form.equip.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+
+      {% for message in form.travel.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+      
+      <form action = "http://localhost:5000/checkAgency" method = post>
+         <fieldset>
+            <legend>Contact Form</legend>
+            {{ form.hidden_tag() }}
+            
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.name.label }}<br>
+               {{ form.name }}
+               <br>
+               
+               
+               {{ form.manpower.label }}<br>
+               {{ form.manpower }}
+               <br>
+
+               {{ form.equip.label }}<br>
+               {{ form.equip }}
+               <br>
+
+               {{ form.travel.label }}<br>
+               {{ form.travel }}
+               <br>
+               
+               {{ form.submit }}
+            </div>
+            
+         </fieldset>
+      </form>
+   </body>
+</html>

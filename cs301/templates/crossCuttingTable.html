@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+   <body>
+      <h2 style = "text-align: center;">Contact Form</h2>
+		
+      {% for message in form.username.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+      
+      {% for message in form.desgn.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+      
+      <form action = "http://localhost:5000/checkCC" method = post>
+         <fieldset>
+            <legend>Form</legend>
+            {{ form.hidden_tag() }}
+            
+            *First register as employee please
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.username.label }}<br>
+               {{ form.username }}
+               <br>
+               
+               
+               {{ form.desgn.label }}<br>
+               {{ form.desgn }}
+               <br>
+               
+               {{ form.submit }}
+            </div>
+            
+         </fieldset>
+      </form>
+   </body>
+</html>
